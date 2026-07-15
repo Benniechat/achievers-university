@@ -69,7 +69,7 @@ export default function LandingPage() {
 </div>
 <div className="relative w-full aspect-video rounded-3xl overflow-hidden glass-card p-2 shadow-2xl z-10 group">
 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl z-20 pointer-events-none"></div>
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} className="w-full h-full rounded-2xl" frameBorder="0" src="https://www.youtube.com/embed/kJBY0O9Nt_w?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=kJBY0O9Nt_w&amp;controls=0&amp;showinfo=0&amp;rel=0" title="Achievers University Training">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} className="w-full h-full rounded-2xl" frameBorder="0" src="https://www.youtube.com/embed/kJBY0O9Nt_w?autoplay=0&amp;loop=1&amp;playlist=kJBY0O9Nt_w&amp;controls=1&amp;showinfo=0&amp;rel=0" title="Achievers University Training">
 </iframe>
 </div>
 </div>

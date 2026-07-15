@@ -49,7 +49,7 @@ export default function Hero() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/kJBY0O9Nt_w?autoplay=1&mute=1&loop=1&playlist=kJBY0O9Nt_w"
+              src="https://www.youtube.com/embed/kJBY0O9Nt_w?autoplay=0&loop=1&playlist=kJBY0O9Nt_w&controls=1"
               title="Achievers University Promo"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
