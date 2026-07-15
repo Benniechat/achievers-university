@@ -2,6 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import { redirect } from "next/navigation";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import Image from "next/image";
 
 export default async function StudentDashboard() {
   const session = await getServerSession(authOptions);
@@ -21,7 +22,7 @@ export default async function StudentDashboard() {
 <span className="material-symbols-outlined" data-icon="menu">menu</span>
 </button>
 <div className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold tracking-tight text-white">
-<img src="/logo.png" className="h-8 md:h-10 w-auto" alt="Achievers University Logo" />
+<Image src="/logo.png" className="h-8 md:h-10 w-auto" alt="Achievers University Logo"  width={200} height={48} />
 </div>
 </div>
 <div className="flex items-center gap-4">
@@ -29,7 +30,7 @@ export default async function StudentDashboard() {
 <button className="text-white hover:opacity-80 transition-opacity duration-400 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95 transition-transform">
 <span className="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
-<img className="w-10 h-10 rounded-full object-cover border-2 border-primary/20" data-alt="A professional headshot of a confident student in a well-lit, modern indoor environment. The lighting is soft and bright, emphasizing a clean, contemporary aesthetic. The mood is optimistic and academically focused, matching a high-end corporate or university profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTOMZhDnRw2EDi6q5sm5cRGF4V7xAxpsrGt84-GEsUQTTx70sUxgyrhDn3941khfBurv0ZZhPiwVih65rfVcxfiyHAjKwXK2WumbuE8I746Hiqdmi3bxrbLI_KwkwHdFGhR1e6C9aZ6E1CO79xx-U-bNrdZdN4huLctt2o7I95PQzhCP2GRRHuu-1Xcq91su0TpIv8F-Yk5gcdC6hc8rNmRIYGzHZGx7ZXznZd8VlXKEmXnbjlwL9U"/>
+<Image className="w-10 h-10 rounded-full object-cover border-2 border-primary/20" alt="A professional headshot of a confident student in a well-lit, modern indoor environment. The lighting is soft and bright, emphasizing a clean, contemporary aesthetic. The mood is optimistic and academically focused, matching a high-end corporate or university profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTOMZhDnRw2EDi6q5sm5cRGF4V7xAxpsrGt84-GEsUQTTx70sUxgyrhDn3941khfBurv0ZZhPiwVih65rfVcxfiyHAjKwXK2WumbuE8I746Hiqdmi3bxrbLI_KwkwHdFGhR1e6C9aZ6E1CO79xx-U-bNrdZdN4huLctt2o7I95PQzhCP2GRRHuu-1Xcq91su0TpIv8F-Yk5gcdC6hc8rNmRIYGzHZGx7ZXznZd8VlXKEmXnbjlwL9U" width={40} height={40} />
 </div>
 </div>
 </header>
@@ -84,7 +85,7 @@ export default async function StudentDashboard() {
 {/*  Course 1  */}
 <div className="glass-panel rounded-3xl p-4 flex flex-col sm:flex-row gap-6 items-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all duration-400 group cursor-pointer">
 <div className="w-full sm:w-48 h-32 rounded-2xl overflow-hidden relative flex-shrink-0">
-<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Abstract digital illustration representing Artificial Intelligence. A glowing, intricate network of nodes and lines over a deep blue and purple gradient background. The style is modern, high-tech, and polished, fitting for a premium online course thumbnail in a light-mode UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf-_XjEEBQ1WIE5Rr-V68LS0Xror2CQrC83IkvwnhmnkQGX8ZGJ2gjLl4amSnhI41m3FERCMA2AsVgXOHJsfRSGNyH3fYKlwd3rAy7aw4X2-wGxT74fRVpXai5OKahT-8xOwPtVDl_KFQZhjF0__c1rI0LbKIbUq-cqZnngNdERqqDukYGS_GJEUWlIo_WyCKNUch3U7ZvegUmM5OwguWNzyBW9ecYGmygflWiw3eHvcrqDlhijTup"/>
+<Image className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Abstract digital illustration representing Artificial Intelligence. A glowing, intricate network of nodes and lines over a deep blue and purple gradient background. The style is modern, high-tech, and polished, fitting for a premium online course thumbnail in a light-mode UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf-_XjEEBQ1WIE5Rr-V68LS0Xror2CQrC83IkvwnhmnkQGX8ZGJ2gjLl4amSnhI41m3FERCMA2AsVgXOHJsfRSGNyH3fYKlwd3rAy7aw4X2-wGxT74fRVpXai5OKahT-8xOwPtVDl_KFQZhjF0__c1rI0LbKIbUq-cqZnngNdERqqDukYGS_GJEUWlIo_WyCKNUch3U7ZvegUmM5OwguWNzyBW9ecYGmygflWiw3eHvcrqDlhijTup" width={600} height={400} />
 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-400"></div>
 </div>
 <div className="flex flex-col flex-grow w-full">
@@ -106,7 +107,7 @@ export default async function StudentDashboard() {
 {/*  Course 2  */}
 <div className="glass-panel rounded-3xl p-4 flex flex-col sm:flex-row gap-6 items-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all duration-400 group cursor-pointer mt-4">
 <div className="w-full sm:w-48 h-32 rounded-2xl overflow-hidden relative flex-shrink-0">
-<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Clean, modern graphic design representing Digital Business. Stylized geometric shapes, a subtle rising graph, and minimalist currency symbols in a bright, optimistic light-mode color palette featuring soft blues and whites. The aesthetic is corporate luxury and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRHb03YJfY5G5I0X64TzKfvYG3W7yZU3z9ooZFlTU10UL5M2GP6K4XoevkIE5Psch8_9En6kZqoNfVZwKCFmjr1DPZGXh94O6AFULdT7e9SkLIO7Mr20tvhx-BR23munebiorfbCcaQes-AsSgPLYJVZ735XrzBWCUXGotENXHuWa7mcv2owupB0t7q9uGu3EEeqqlZ6WIZWcOOHGPZuxTDD_G7ib7oq87DhVj8Ad3AqPetfRLfULJ"/>
+<Image className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Clean, modern graphic design representing Digital Business. Stylized geometric shapes, a subtle rising graph, and minimalist currency symbols in a bright, optimistic light-mode color palette featuring soft blues and whites. The aesthetic is corporate luxury and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRHb03YJfY5G5I0X64TzKfvYG3W7yZU3z9ooZFlTU10UL5M2GP6K4XoevkIE5Psch8_9En6kZqoNfVZwKCFmjr1DPZGXh94O6AFULdT7e9SkLIO7Mr20tvhx-BR23munebiorfbCcaQes-AsSgPLYJVZ735XrzBWCUXGotENXHuWa7mcv2owupB0t7q9uGu3EEeqqlZ6WIZWcOOHGPZuxTDD_G7ib7oq87DhVj8Ad3AqPetfRLfULJ" width={600} height={400} />
 </div>
 <div className="flex flex-col flex-grow w-full">
 <div className="flex justify-between items-start mb-2">

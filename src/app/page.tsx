@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import Image from "next/image";
 
 export default function LandingPage() {
   return (<>
@@ -8,7 +9,7 @@ export default function LandingPage() {
 <header className="fixed top-0 w-full z-50 bg-primary/95 dark:bg-surface-dim/95 backdrop-blur-xl border-b border-white/10 shadow-xl shadow-primary/5 transition-all duration-300" id="top-nav">
 <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div className="flex items-center gap-3">
-<img alt="Achievers University Logo" className="h-10 md:h-12 w-auto object-contain" src="/logo.png"/>
+<Image alt="Achievers University Logo" className="h-10 md:h-12 w-auto object-contain" src="/logo.png" width={200} height={48} />
 </div>
 <nav className="hidden md:flex items-center gap-8">
 <a className="text-white/80 hover:text-white transition-colors font-label-md text-label-md" href="#curriculum">Curriculum</a>
@@ -58,9 +59,9 @@ export default function LandingPage() {
 </div>
 <div className="flex items-center gap-4 mt-4 pt-4 border-t border-outline-variant/30">
 <div className="flex -space-x-3">
-<img className="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A small, circular portrait of a professional student smiling in a well-lit studio environment, representing a successful online learner. High-quality corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5vXErOAUiGgLhKz0q6m97c5q7CQOgGxxjp4PUVGWKFpqWIAouZUjfn5DxJUxZBaOTyGldYq74dVp1sFd2lqWTfUcyLKxz-4B8gbCR3cOraNj8d9xnPZ49em0CLSQZfOtlqRm3w60THoAA26kAA8HxuFqKLjHuBy5-s4fJWynuHkvoaQDItLsaZAGVqIg9qqvw3c7FxeTjR4W7jK1gWcNtabSchSPG41I0SJf_-35IbzYq2nFy9I3A"/>
-<img className="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A small, circular portrait of a creative professional using a laptop, representing a successful digital business owner. High-quality corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5I_sdQqp1ejr2T1SCzp0L8j8XG5XuoT_6lRp56ojRXVgDNmlDLvse0TO2Pb8_5ODLEF_ILYkeL0PggODeCwIk1QWasC2_lbbRQaZXrxrHel0ZwlA7sntQUpwLO2Zlm2mhicU5xh4rSF0SQD--6P4Os0CIeGTDR2beSLAOAK0nlXs0J98hIWLB4ST0HdPmJcprGUdJIpIQyUhXeAPAYprgk-CC0B3bp7Ql1jK0ZXCSFCUJOGlp9sNf"/>
-<img className="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A small, circular portrait of a young entrepreneur in a modern office space, representing a successful freelancer. High-quality corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQmv2DdU0Z9iBm0K1-x1XrEF_l0WNp75jqaFl_IliAiMWWb26FKon5vxu5H7g0wP9qx7uMcmLsdWu3mCdtTc6LyUYYQGrxAtokwiXRHL4EPvI4wdZUCkhxbj_TfiY6BWy0f_Gl40nNjBi8qwASiuCjwoRVMzGYux-yZprYA0dlEPeXl31fTu33iLT_uU9aTmvU_S5MkwV4jMWGCp_QEwnnn3xsCiDi4mHOAe8W-5iUvvYInZ8-ZP6"/>
+<Image className="w-10 h-10 rounded-full border-2 border-surface object-cover" alt="A small, circular portrait of a professional student smiling in a well-lit studio environment, representing a successful online learner. High-quality corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5vXErOAUiGgLhKz0q6m97c5q7CQOgGxxjp4PUVGWKFpqWIAouZUjfn5DxJUxZBaOTyGldYq74dVp1sFd2lqWTfUcyLKxz-4B8gbCR3cOraNj8d9xnPZ49em0CLSQZfOtlqRm3w60THoAA26kAA8HxuFqKLjHuBy5-s4fJWynuHkvoaQDItLsaZAGVqIg9qqvw3c7FxeTjR4W7jK1gWcNtabSchSPG41I0SJf_-35IbzYq2nFy9I3A" width={40} height={40} />
+<Image className="w-10 h-10 rounded-full border-2 border-surface object-cover" alt="A small, circular portrait of a creative professional using a laptop, representing a successful digital business owner. High-quality corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5I_sdQqp1ejr2T1SCzp0L8j8XG5XuoT_6lRp56ojRXVgDNmlDLvse0TO2Pb8_5ODLEF_ILYkeL0PggODeCwIk1QWasC2_lbbRQaZXrxrHel0ZwlA7sntQUpwLO2Zlm2mhicU5xh4rSF0SQD--6P4Os0CIeGTDR2beSLAOAK0nlXs0J98hIWLB4ST0HdPmJcprGUdJIpIQyUhXeAPAYprgk-CC0B3bp7Ql1jK0ZXCSFCUJOGlp9sNf" width={40} height={40} />
+<Image className="w-10 h-10 rounded-full border-2 border-surface object-cover" alt="A small, circular portrait of a young entrepreneur in a modern office space, representing a successful freelancer. High-quality corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQmv2DdU0Z9iBm0K1-x1XrEF_l0WNp75jqaFl_IliAiMWWb26FKon5vxu5H7g0wP9qx7uMcmLsdWu3mCdtTc6LyUYYQGrxAtokwiXRHL4EPvI4wdZUCkhxbj_TfiY6BWy0f_Gl40nNjBi8qwASiuCjwoRVMzGYux-yZprYA0dlEPeXl31fTu33iLT_uU9aTmvU_S5MkwV4jMWGCp_QEwnnn3xsCiDi4mHOAe8W-5iUvvYInZ8-ZP6" width={40} height={40} />
 <div className="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center text-xs font-bold text-primary">+5k</div>
 </div>
 <p className="font-label-sm text-label-sm text-on-surface-variant">Thousands learning worldwide.</p>
@@ -171,7 +172,7 @@ export default function LandingPage() {
 <footer className="bg-primary dark:bg-surface-container-lowest w-full pt-stack-lg pb-stack-md">
 <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div className="md:col-span-1 flex flex-col gap-4">
-<img alt="Achievers University Logo" className="h-12 w-auto object-contain self-start bg-white rounded p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQZABmVYwj6tI-RrEMmqD3_D5oH8KTsqTPE_sA_pDlJnYLTjGRnymMU23esP8nToE2L7sr_zr993lFOffXSTLoc1rK4lQ2_rFuS5dtK6ubjgvmd8kEWv74TfAFTYZ5ANr8YuFP71Pk5epPWMsW8QKdrF3sUjxl_XD3DFXGfvDq4Nk3_y3ztwZZZnCfKzzE-6FZDZdKXm_ep_xXfS_D7ytnhvnOhgwmhS8GYGvOt8Ew30i0Zh7sPBM3VxzYoM561McjEQ"/>
+<Image alt="Achievers University Logo" className="h-12 w-auto object-contain self-start bg-white rounded p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQZABmVYwj6tI-RrEMmqD3_D5oH8KTsqTPE_sA_pDlJnYLTjGRnymMU23esP8nToE2L7sr_zr993lFOffXSTLoc1rK4lQ2_rFuS5dtK6ubjgvmd8kEWv74TfAFTYZ5ANr8YuFP71Pk5epPWMsW8QKdrF3sUjxl_XD3DFXGfvDq4Nk3_y3ztwZZZnCfKzzE-6FZDZdKXm_ep_xXfS_D7ytnhvnOhgwmhS8GYGvOt8Ew30i0Zh7sPBM3VxzYoM561McjEQ" width={800} height={600} />
 <p className="font-body-md text-body-md text-on-primary/80 dark:text-on-surface/80">The Gold Standard in AI Education.</p>
 </div>
 <div className="md:col-span-2 flex flex-wrap gap-x-8 gap-y-4 justify-start md:justify-center">

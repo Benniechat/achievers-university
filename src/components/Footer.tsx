@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <img src="/logo.png" alt="Achievers University Logo" className="h-12 w-auto mb-4" />
+            <Image src="/logo.png" alt="Achievers University Logo" className="h-12 w-auto mb-4"  width={200} height={48} />
             <p className="text-gray-500 dark:text-gray-400 max-w-sm mb-6">
               Empowering the next generation of digital entrepreneurs with high-income skills and practical AI mastery.
             </p>

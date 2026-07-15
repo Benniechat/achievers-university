@@ -2,6 +2,7 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/authOptions";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import Image from "next/image";
 
 export default async function AffiliateDashboard() {
   const session = await getServerSession(authOptions);
@@ -17,7 +18,7 @@ export default async function AffiliateDashboard() {
 <header className="fixed top-0 w-full z-50 bg-primary/95 dark:bg-surface-dim/95 backdrop-blur-xl border-b border-white/10 shadow-xl shadow-primary/5">
 <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div className="flex items-center gap-4">
-<img src="/logo.png" className="h-8 md:h-10 w-auto" alt="Achievers University Logo" />
+<Image src="/logo.png" className="h-8 md:h-10 w-auto" alt="Achievers University Logo"  width={200} height={48} />
 </div>
 <div className="hidden md:flex gap-6">
 {/*  Desktop Nav items would go here if defined in TopAppBar JSON, mimicking BottomNav  */}

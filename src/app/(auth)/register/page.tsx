@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 
 function RegisterForm() {
   const router = useRouter();
@@ -159,7 +160,7 @@ export default function RegisterPage() {
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to home
         </Link>
-        <img alt="Achievers University Logo" className="mx-auto h-12 w-auto mb-4" src="/logo.png" />
+        <Image alt="Achievers University Logo" className="mx-auto h-12 w-auto mb-4" src="/logo.png"  width={200} height={48} />
         <h2 className="text-center text-3xl font-extrabold text-gray-900">
           Start your journey today
         </h2>
