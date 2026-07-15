@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          String    @default("USER") // USER, ADMIN, AFFILIATE
+  isStudent     Boolean   @default(false)
+
+  affiliateProfile AffiliateProfile?
+  referrals        Referral[]       @relation("Referrer")
+  withdrawals      Withdrawal[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model AffiliateProfile {
+  id             String    @id @default(cuid())
+  userId         String    @unique
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  referralCode   String    @unique
+  totalClicks    Int       @default(0)
+  totalEarnings  Float     @default(0.0)
+  pendingBalance Float     @default(0.0)
+  paidBalance    Float     @default(0.0)
+
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Referral {
+  id          String   @id @default(cuid())
+  referrerId  String
+  referrer    User     @relation("Referrer", fields: [referrerId], references: [id], onDelete: Cascade)
+  visitorIp   String?
+  source      String?
+  converted   Boolean  @default(false)
+  revenue     Float    @default(0.0)
+  commission  Float    @default(0.0)
+
+  createdAt   DateTime @default(now())
+}
+
+model Withdrawal {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount        Float
+  status        String   @default("PENDING") // PENDING, APPROVED, REJECTED, PAID
+  bankName      String
+  accountNumber String
+  accountName   String
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
