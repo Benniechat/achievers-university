@@ -43,20 +43,21 @@
   }
 
   .bg-gradient-radial {
-    background-image: radial-gradient(circle at top right, rgba(128, 58, 189, 0.1), transparent 40%),
-                      radial-gradient(circle at bottom left, rgba(0, 51, 102, 0.1), transparent 40%);
+    background: #020b1f;
+    background-image: radial-gradient(circle at top right, rgba(41, 104, 255, 0.15), transparent 50%),
+                      radial-gradient(circle at center left, rgba(253, 191, 15, 0.05), transparent 40%);
   }
 
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg dark:bg-black/20 dark:border-white/10;
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
   }
 
   .premium-gradient {
-    @apply bg-gradient-to-br from-[#001e40] to-[#803abd];
+    @apply bg-gradient-to-br from-[#020b1f] to-[#0a1936];
   }
   
   .text-gradient, .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+    @apply text-[#fdbf0f];
   }
   
   .glass-panel {
