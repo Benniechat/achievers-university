@@ -171,6 +171,35 @@ export default async function StudentDashboard() {
 </div>
 </section>
 </div>
+
+{/*  Footer  */}
+<footer className="w-full pt-10 pb-8 bg-primary dark:bg-surface-container-lowest px-4 md:px-8 max-w-7xl mx-auto md:mb-0 mb-20 rounded-t-3xl border border-white/5 mt-12">
+<div className="flex flex-col md:flex-row justify-between items-center gap-6">
+  <div>
+    <span className="font-bold text-xl text-white block mb-2">Achievers University</span>
+    <p className="text-white/60 text-sm">© {new Date().getFullYear()} Achievers University. All rights reserved.</p>
+  </div>
+  
+  <div className="flex flex-wrap gap-6 items-center justify-center">
+    <a className="text-white/60 hover:text-white text-sm transition-colors" href="#">Terms</a>
+    <a className="text-white/60 hover:text-white text-sm transition-colors" href="#">Privacy</a>
+  </div>
+
+  <div className="flex items-center gap-2 text-sm text-white/50 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-cta/30 transition-colors">
+    <span>Designed by</span>
+    <a 
+      href="https://wa.me/2348101811993" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-cta font-bold flex items-center gap-1 hover:opacity-80 transition-opacity"
+    >
+      Benniechat TechWealth Solutions
+      <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
+    </a>
+  </div>
+</div>
+</footer>
+
 </main>
 {/*  BottomNavBar  */}
 <nav className="bg-surface/80 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] md:hidden flex justify-around items-center h-16 px-4">

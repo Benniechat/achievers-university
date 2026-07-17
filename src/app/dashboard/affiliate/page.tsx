@@ -235,16 +235,31 @@ View All <span className="material-symbols-outlined text-sm">arrow_forward</span
 </a>
 </nav>
 {/*  Footer  */}
-<footer className="w-full pt-stack-lg pb-stack-md bg-primary dark:bg-surface-container-lowest grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto md:mb-0 mb-20">
-<div className="md:col-span-1">
-<span className="font-headline-lg text-headline-lg text-on-primary block mb-4">Achievers University</span>
-<p className="font-body-md text-body-md text-on-primary/80 dark:text-on-surface/80">© 2024 Achievers University. The Gold Standard in AI Education.</p>
-</div>
-<div className="md:col-span-3 flex flex-wrap gap-4 md:justify-end md:items-start items-center">
-<a className="font-body-md text-body-md text-on-primary/80 dark:text-on-surface/80 hover:text-on-primary transition-colors" href="#">Terms of Service</a>
-<a className="font-body-md text-body-md text-on-primary/80 dark:text-on-surface/80 hover:text-on-primary transition-colors" href="#">Privacy Policy</a>
-<a className="font-body-md text-body-md text-tertiary-fixed underline hover:text-on-primary transition-colors" href="#">Affiliate Agreement</a>
-<a className="font-body-md text-body-md text-on-primary/80 dark:text-on-surface/80 hover:text-on-primary transition-colors" href="#">Institutional Trust</a>
+<footer className="w-full pt-10 pb-8 bg-primary dark:bg-surface-container-lowest px-4 md:px-8 max-w-7xl mx-auto md:mb-0 mb-20 rounded-t-3xl border border-white/5">
+<div className="flex flex-col md:flex-row justify-between items-center gap-6">
+  <div>
+    <span className="font-bold text-xl text-white block mb-2">Achievers University</span>
+    <p className="text-white/60 text-sm">© {new Date().getFullYear()} Achievers University. All rights reserved.</p>
+  </div>
+  
+  <div className="flex flex-wrap gap-6 items-center justify-center">
+    <a className="text-white/60 hover:text-white text-sm transition-colors" href="#">Terms</a>
+    <a className="text-white/60 hover:text-white text-sm transition-colors" href="#">Privacy</a>
+    <a className="text-white/60 hover:text-white text-sm transition-colors" href="#">Affiliate Agreement</a>
+  </div>
+
+  <div className="flex items-center gap-2 text-sm text-white/50 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-cta/30 transition-colors">
+    <span>Designed by</span>
+    <a 
+      href="https://wa.me/2348101811993" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-cta font-bold flex items-center gap-1 hover:opacity-80 transition-opacity"
+    >
+      Benniechat TechWealth Solutions
+      <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
+    </a>
+  </div>
 </div>
 </footer>
 

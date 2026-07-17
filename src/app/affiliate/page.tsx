@@ -1,37 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export default function AffiliateLandingPage() {
   return (
     <div className="font-['Inter'] text-on-surface bg-gradient-radial min-h-screen">
-      {/* Top Navigation */}
-      <header className="absolute top-0 w-full z-50 py-6" id="top-nav">
-        <div className="flex justify-between items-center px-4 md:px-8 max-w-7xl mx-auto">
-          <div className="flex items-center">
-            <Link href="/">
-              <Image alt="Achievers University Logo" className="h-10 md:h-14 w-auto object-contain" src="/logo.png" width={200} height={56} />
-            </Link>
-          </div>
-          <nav className="hidden lg:flex items-center gap-8">
-            <Link className="text-white hover:text-cta transition-colors font-medium text-sm" href="/">Home</Link>
-            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#about">About</Link>
-            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#courses">Courses</Link>
-            <Link className="text-cta font-bold text-sm" href="/affiliate">Become an Affiliate</Link>
-            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#testimonials">Testimonials</Link>
-            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#contact">Contact</Link>
-          </nav>
-          <div className="hidden md:flex items-center gap-4">
-            <Link href="/login" className="text-white border border-white/30 px-6 py-2.5 rounded-md font-semibold text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-              <span className="material-symbols-outlined text-[18px]">lock</span>
-              Login
-            </Link>
-            <Link href="/register?type=affiliate" className="bg-cta text-primary px-6 py-2.5 rounded-md font-bold text-sm hover:opacity-90 transition-opacity flex items-center gap-2 shadow-[0_4px_14px_0_rgba(253,191,15,0.39)]">
-              Partner Now
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Header ctaText="Partner Now" ctaLink="/register?type=affiliate" />
 
       <main>
         {/* Hero Section */}
@@ -154,6 +129,7 @@ export default function AffiliateLandingPage() {
           </div>
         </section>
 
+        <Footer />
       </main>
     </div>
   );
