@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, password, isAffiliate } = await req.json();
+    const { name, email, password, isAffiliate, refCode } = await req.json();
 
     if (!name || !email || !password) {
       return NextResponse.json(
@@ -45,6 +45,27 @@ export async function POST(req: Request) {
           referralCode: Math.random().toString(36).substring(2, 8).toUpperCase(),
         }
       });
+    }
+
+    if (refCode && isStudent) {
+      const affiliateProfile = await prisma.affiliateProfile.findUnique({
+        where: { referralCode: refCode },
+      });
+      if (affiliateProfile) {
+        await prisma.referral.create({
+          data: {
+            referrerId: affiliateProfile.userId,
+            source: 'registration',
+            referredId: user.id,
+            referredName: user.name,
+          }
+        });
+        // Also update clicks/stats if needed
+        await prisma.affiliateProfile.update({
+          where: { id: affiliateProfile.id },
+          data: { totalClicks: { increment: 1 } }
+        });
+      }
     }
 
     return NextResponse.json(

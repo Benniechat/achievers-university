@@ -11,7 +11,8 @@ function RegisterForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const type = searchParams.get("type");
-  
+  const refCode = searchParams.get("ref");
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +30,7 @@ function RegisterForm() {
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, isAffiliate })
+        body: JSON.stringify({ name, email, password, isAffiliate, refCode })
       });
 
       const data = await res.json();

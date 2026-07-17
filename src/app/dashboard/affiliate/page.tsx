@@ -3,13 +3,27 @@ import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/authOptions";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import Image from "next/image";
+import prisma from "@/lib/prisma";
 
 export default async function AffiliateDashboard() {
   const session = await getServerSession(authOptions);
 
-  if (session?.user?.role !== "AFFILIATE") {
+  if (session?.user?.role !== "AFFILIATE" || !session?.user?.id) {
     redirect("/dashboard");
   }
+
+  const profile = await prisma.affiliateProfile.findUnique({
+    where: { userId: session.user.id },
+  });
+
+  const referrals = await prisma.referral.findMany({
+    where: { referrerId: session.user.id },
+    orderBy: { createdAt: "desc" },
+    take: 10
+  });
+
+  const convertedCount = referrals.filter(r => r.converted).length;
+  const referralLink = `https://achieversuniversity.vercel.app/register?ref=${profile?.referralCode || ""}`;
 
   return (
     <>
@@ -59,7 +73,7 @@ export default async function AffiliateDashboard() {
 <span className="material-symbols-outlined text-secondary-fixed-dim bg-secondary-container/30 p-2 rounded-lg">account_balance_wallet</span>
 <h3 className="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">Withdrawable Balance</h3>
 </div>
-<p className="font-headline-xl text-headline-xl text-on-surface dark:text-white">$850.00</p>
+<p className="font-headline-xl text-headline-xl text-on-surface dark:text-white">${(profile?.paidBalance || 0).toFixed(2)}</p>
 <button className="mt-4 w-full py-2 rounded-lg bg-secondary text-white hover:bg-secondary/90 transition-colors font-label-sm text-label-sm shadow-md shadow-secondary/20 font-semibold flex items-center justify-center gap-2">
 <span className="material-symbols-outlined text-[18px]">payments</span> Withdraw Funds
 </button>
@@ -70,7 +84,7 @@ export default async function AffiliateDashboard() {
 <span className="material-symbols-outlined text-on-surface-variant dark:text-outline-variant bg-surface-container-highest/20 p-2 rounded-lg">pending_actions</span>
 <h3 className="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">Pending Earnings</h3>
 </div>
-<p className="font-headline-xl text-headline-xl text-on-surface-variant dark:text-white/80">$210.00</p>
+<p className="font-headline-xl text-headline-xl text-on-surface-variant dark:text-white/80">${(profile?.pendingBalance || 0).toFixed(2)}</p>
 <div className="mt-4 flex flex-col gap-2">
 <div className="flex items-center gap-2 text-xs text-on-surface-variant dark:text-outline-variant">
 <span className="material-symbols-outlined text-xs">info</span> Clearance in 3-5 business days
@@ -86,7 +100,7 @@ export default async function AffiliateDashboard() {
 <h3 className="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">Total Clicks</h3>
 <span className="material-symbols-outlined text-primary-fixed-dim">ads_click</span>
 </div>
-<p className="font-headline-lg text-headline-lg text-on-surface dark:text-white">1,240</p>
+<p className="font-headline-lg text-headline-lg text-on-surface dark:text-white">{profile?.totalClicks || 0}</p>
 <p className="font-label-sm text-label-sm text-[#4ADE80] mt-2 flex items-center gap-1">
 <span className="material-symbols-outlined text-xs">trending_up</span> +12% this week
                     </p>
@@ -97,7 +111,7 @@ export default async function AffiliateDashboard() {
 <h3 className="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">Conversions</h3>
 <span className="material-symbols-outlined text-[#D4AF37]">diamond</span>
 </div>
-<p className="font-headline-lg text-headline-lg text-on-surface dark:text-white">45</p>
+<p className="font-headline-lg text-headline-lg text-on-surface dark:text-white">{convertedCount}</p>
 <p className="font-label-sm text-label-sm text-[#4ADE80] mt-2 flex items-center gap-1">
 <span className="material-symbols-outlined text-xs">trending_up</span> 3.6% Conv. Rate
                     </p>
@@ -122,33 +136,29 @@ View All <span className="material-symbols-outlined text-sm">arrow_forward</span
 </tr>
 </thead>
 <tbody className="text-body-md font-body-md text-on-surface dark:text-white/90">
-<tr className="border-b border-outline-variant/10 dark:border-white/5 hover:bg-surface-variant/30 dark:hover:bg-white/5 transition-colors">
-<td className="py-4 flex items-center gap-3 pr-4">
-<div className="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary-fixed/20 flex items-center justify-center text-primary dark:text-primary-fixed-dim font-bold text-sm">S</div>
-Sarah Jenkins
-</td>
-<td className="py-4 text-on-surface-variant dark:text-outline-variant text-sm pr-4">Oct 24, 2024</td>
-<td className="py-4 pr-4"><span className="px-2 py-1 bg-[#4ADE80]/10 text-[#4ADE80] text-xs rounded-full font-medium">Completed</span></td>
-<td className="py-4 text-right font-semibold">$150.00</td>
-</tr>
-<tr className="border-b border-outline-variant/10 dark:border-white/5 hover:bg-surface-variant/30 dark:hover:bg-white/5 transition-colors">
-<td className="py-4 flex items-center gap-3 pr-4">
-<div className="w-8 h-8 rounded-full bg-secondary/10 dark:bg-secondary-fixed/20 flex items-center justify-center text-secondary dark:text-secondary-fixed-dim font-bold text-sm">M</div>
-Michael Chen
-</td>
-<td className="py-4 text-on-surface-variant dark:text-outline-variant text-sm pr-4">Oct 22, 2024</td>
-<td className="py-4 pr-4"><span className="px-2 py-1 bg-surface-container-highest dark:bg-white/10 text-on-surface-variant dark:text-white/70 text-xs rounded-full font-medium">Pending</span></td>
-<td className="py-4 text-right font-semibold text-on-surface-variant dark:text-white/70">$60.00</td>
-</tr>
-<tr className="hover:bg-surface-variant/30 dark:hover:bg-white/5 transition-colors">
-<td className="py-4 flex items-center gap-3 pr-4">
-<div className="w-8 h-8 rounded-full bg-tertiary-container/10 flex items-center justify-center text-tertiary-container dark:text-tertiary-fixed-dim font-bold text-sm">E</div>
-Emma Watson
-</td>
-<td className="py-4 text-on-surface-variant dark:text-outline-variant text-sm pr-4">Oct 19, 2024</td>
-<td className="py-4 pr-4"><span className="px-2 py-1 bg-[#4ADE80]/10 text-[#4ADE80] text-xs rounded-full font-medium">Completed</span></td>
-<td className="py-4 text-right font-semibold">$150.00</td>
-</tr>
+{referrals.length === 0 ? (
+  <tr><td colSpan={4} className="py-4 text-center text-on-surface-variant">No referrals yet</td></tr>
+) : referrals.map(ref => (
+  <tr key={ref.id} className="border-b border-outline-variant/10 dark:border-white/5 hover:bg-surface-variant/30 dark:hover:bg-white/5 transition-colors">
+  <td className="py-4 flex items-center gap-3 pr-4">
+  <div className="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary-fixed/20 flex items-center justify-center text-primary dark:text-primary-fixed-dim font-bold text-sm">
+    {(ref.referredName || "U").charAt(0).toUpperCase()}
+  </div>
+  {ref.referredName || "Unknown"}
+  </td>
+  <td className="py-4 text-on-surface-variant dark:text-outline-variant text-sm pr-4">
+    {new Date(ref.createdAt).toLocaleDateString()}
+  </td>
+  <td className="py-4 pr-4">
+    {ref.converted ? (
+      <span className="px-2 py-1 bg-[#4ADE80]/10 text-[#4ADE80] text-xs rounded-full font-medium">Completed</span>
+    ) : (
+      <span className="px-2 py-1 bg-surface-container-highest dark:bg-white/10 text-on-surface-variant dark:text-white/70 text-xs rounded-full font-medium">Pending</span>
+    )}
+  </td>
+  <td className="py-4 text-right font-semibold text-on-surface-variant dark:text-white/70">${ref.commission.toFixed(2)}</td>
+  </tr>
+))}
 </tbody>
 </table>
 </div>
@@ -163,7 +173,7 @@ Emma Watson
 <div>
 <label className="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant mb-2 block">Your Referral Link</label>
 <div className="flex bg-surface-container-high dark:bg-black/40 rounded-lg border border-outline-variant/20 dark:border-white/10 p-1">
-<input className="bg-transparent border-none text-on-surface dark:text-white font-body-md text-body-md w-full focus:ring-0 truncate px-3" readOnly={true} type="text" value="achievers.edu/ref/alexcarter"/>
+<input className="bg-transparent border-none text-on-surface dark:text-white font-body-md text-body-md w-full focus:ring-0 truncate px-3" readOnly={true} type="text" value={referralLink}/>
 <button className="btn-primary-luxury px-4 py-2 rounded-md font-label-sm text-label-sm text-white hover:opacity-80 transition-opacity">Copy</button>
 </div>
 </div>

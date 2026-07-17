@@ -51,6 +51,8 @@ model Referral {
   converted   Boolean  @default(false)
   revenue     Float    @default(0.0)
   commission  Float    @default(0.0)
+  referredId  String?
+  referredName String?
 
   createdAt   DateTime @default(now())
 }

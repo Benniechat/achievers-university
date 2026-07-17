@@ -11,12 +11,13 @@ export default function LandingPage() {
             <Image alt="Achievers University Logo" className="h-10 md:h-14 w-auto object-contain" src="/logo.png" width={200} height={56} />
           </div>
           <nav className="hidden lg:flex items-center gap-8">
-            <a className="text-white hover:text-cta transition-colors font-medium text-sm" href="#">Home</a>
-            <a className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="#about">About</a>
-            <a className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="#courses">Courses</a>
-            <a className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="#testimonials">Testimonials</a>
-            <a className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="#faq">FAQ</a>
-            <a className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="#contact">Contact</a>
+            <Link className="text-white hover:text-cta transition-colors font-medium text-sm" href="/">Home</Link>
+            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#about">About</Link>
+            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#courses">Courses</Link>
+            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/affiliate">Become an Affiliate</Link>
+            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#testimonials">Testimonials</Link>
+            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#faq">FAQ</Link>
+            <Link className="text-white/80 hover:text-white transition-colors font-medium text-sm" href="/#contact">Contact</Link>
           </nav>
           <div className="hidden md:flex items-center gap-4">
             <Link href="/login" className="text-white border border-white/30 px-6 py-2.5 rounded-md font-semibold text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
