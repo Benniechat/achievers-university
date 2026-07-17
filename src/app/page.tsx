@@ -52,7 +52,7 @@ export default function LandingPage() {
               </h1>
               
               <p className="text-lg text-white/80 max-w-[540px] leading-relaxed">
-                Join Achievers' University and gain practical skills, mentorship, and access to opportunities that can help you earn consistently from anywhere in the world.
+                Join Achievers&apos; University and gain practical skills, mentorship, and access to opportunities that can help you earn consistently from anywhere in the world.
               </p>
               
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
@@ -101,7 +101,7 @@ export default function LandingPage() {
                 {/* Introduction tag */}
                 <div className="absolute top-6 left-6 z-20">
                   <span className="bg-black/80 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">INTRODUCTION</span>
-                  <h3 className="text-white font-bold text-2xl mt-3">Achievers' University<br/>Overview</h3>
+                  <h3 className="text-white font-bold text-2xl mt-3">Achievers&apos; University<br/>Overview</h3>
                 </div>
                 {/* Custom Play button overlay (mock) */}
                 <div className="absolute left-6 top-1/2 -translate-y-1/2 z-20">
@@ -335,7 +335,7 @@ export default function LandingPage() {
                 {/* Testimonial 1 */}
                 <div className="bg-[#020B1F] border border-white/10 rounded-2xl p-8 flex flex-col gap-6">
                   <p className="text-white/80 text-sm leading-relaxed flex-1">
-                    "The AI skills I learned here changed everything for me. I now make money daily doing what I love."
+                    &quot;The AI skills I learned here changed everything for me. I now make money daily doing what I love.&quot;
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-600">
@@ -358,7 +358,7 @@ export default function LandingPage() {
                 {/* Testimonial 2 */}
                 <div className="bg-[#020B1F] border border-white/10 rounded-2xl p-8 flex flex-col gap-6">
                   <p className="text-white/80 text-sm leading-relaxed flex-1">
-                    "Within 2 months, I started getting clients from the marketplace and my income increased massively."
+                    &quot;Within 2 months, I started getting clients from the marketplace and my income increased massively.&quot;
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-600">
@@ -381,7 +381,7 @@ export default function LandingPage() {
                 {/* Testimonial 3 */}
                 <div className="bg-[#020B1F] border border-white/10 rounded-2xl p-8 flex flex-col gap-6">
                   <p className="text-white/80 text-sm leading-relaxed flex-1">
-                    "The mentorship and WhatsApp strategies helped me build a strong brand and consistent income."
+                    &quot;The mentorship and WhatsApp strategies helped me build a strong brand and consistent income.&quot;
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-600">
@@ -429,7 +429,7 @@ export default function LandingPage() {
                 One Decision <span className="text-cta">Today!</span>
               </h2>
               <p className="text-white/80 text-lg max-w-md">
-                Join Achievers' University now and gain access to high-income skills, mentorship, and opportunities that can change your life.
+                Join Achievers&apos; University now and gain access to high-income skills, mentorship, and opportunities that can change your life.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4 items-start sm:items-center">
                 <Link href="/register" className="bg-cta text-primary px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
