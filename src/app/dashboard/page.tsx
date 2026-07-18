@@ -95,6 +95,11 @@ export default async function StudentDashboard() {
           <div className="flex items-center gap-4">
             <ThemeSwitcher />
             <Link href="/courses" className="text-white hover:text-cta font-medium text-sm hidden md:block">Browse Courses</Link>
+            {session.user.role === "ADMIN" && (
+              <Link href="/dashboard/admin/courses" className="text-cta border border-cta/30 px-4 py-1.5 rounded-full font-bold text-sm hover:bg-cta/10 transition-colors hidden md:block">
+                Instructor Portal
+              </Link>
+            )}
             <div className="w-10 h-10 rounded-full bg-cta text-primary flex items-center justify-center font-bold text-xl uppercase">
               {session.user.name?.[0] || session.user.email?.[0] || "U"}
             </div>
