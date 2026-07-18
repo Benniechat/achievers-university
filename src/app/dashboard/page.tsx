@@ -49,7 +49,7 @@ export default async function StudentDashboard() {
   const enrichedCourses = enrollments.map(e => {
     let courseTotalLessons = 0;
     let courseCompletedLessons = 0;
-    let nextLessonId = null;
+    let nextLessonId: string | null = null;
     let nextLessonTitle = "Completed";
     
     e.course.modules.forEach(m => {
