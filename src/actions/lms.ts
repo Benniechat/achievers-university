@@ -67,7 +67,7 @@ export async function createLesson(moduleId: string, data: { title: string; vide
       order: count,
     }
   });
-  revalidatePath(`/dashboard/admin/courses/${module.courseId}`);
+  revalidatePath(`/dashboard/admin/courses/${mod.courseId}`);
   return lesson;
 }
 
