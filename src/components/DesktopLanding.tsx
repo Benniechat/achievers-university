@@ -72,17 +72,7 @@ export function DesktopLanding() {
 
             <div className="relative z-10 lg:ml-8 mt-10 lg:mt-0">
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black aspect-video group">
-                {/* Introduction tag */}
-                <div className="absolute top-6 left-6 z-20">
-                  <span className="bg-black/80 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">INTRODUCTION</span>
-                  <h3 className="text-white font-bold text-2xl mt-3">Achievers&apos; University<br/>Overview</h3>
-                </div>
-                {/* Custom Play button overlay (mock) */}
-                <div className="absolute left-6 top-1/2 -translate-y-1/2 z-20">
-                   <div className="w-16 h-16 bg-cta rounded-full flex items-center justify-center cursor-pointer shadow-[0_0_30px_rgba(253,191,15,0.4)] hover:scale-105 transition-transform">
-                     <span className="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
-                   </div>
-                </div>
+                {/* No absolute text overlay so video is clickable */}
                 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} className="w-full h-full object-cover opacity-80" frameBorder="0" src="https://www.youtube.com/embed/kJBY0O9Nt_w?autoplay=0&amp;loop=1&amp;playlist=kJBY0O9Nt_w&amp;controls=1&amp;showinfo=0&amp;rel=0" title="Achievers University Training">
                 </iframe>
               </div>

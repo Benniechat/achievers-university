@@ -27,20 +27,9 @@ export function MobileLanding() {
         </p>
 
         {/* Video Card */}
-        <div className="w-full relative rounded-[20px] overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-black aspect-[4/3] mb-8">
-          <img src="https://via.placeholder.com/600x450/010613/FFFFFF?text=Instructor+Video" alt="Instructor" className="w-full h-full object-cover opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#010613] to-transparent"></div>
-          
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-              <span className="material-symbols-outlined text-[#010613] text-3xl ml-1" style={{fontVariationSettings:"'FILL' 1"}}>play_arrow</span>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-            <span className="text-xs font-medium text-white">Watch the full presentation</span>
-            <span className="text-xs font-bold text-white bg-black/50 px-2 py-1 rounded">28:45</span>
-          </div>
+        <div className="w-full relative rounded-[20px] overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-black aspect-video mb-8">
+          <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} className="w-full h-full object-cover" frameBorder="0" src="https://www.youtube.com/embed/kJBY0O9Nt_w?autoplay=0&amp;loop=1&amp;playlist=kJBY0O9Nt_w&amp;controls=1&amp;showinfo=0&amp;rel=0" title="Achievers University Training">
+          </iframe>
         </div>
 
         {/* CTAs */}
