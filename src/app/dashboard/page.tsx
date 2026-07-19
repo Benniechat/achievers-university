@@ -156,7 +156,7 @@ export default async function StudentDashboard() {
               <div className="bg-surface-container-lowest border border-white/10 rounded-3xl p-12 text-center">
                 <span className="material-symbols-outlined text-6xl text-white/20 mb-4">menu_book</span>
                 <h3 className="text-xl font-bold text-white mb-2">No courses yet</h3>
-                <p className="text-white/60 mb-6">You haven't enrolled in any courses. Browse our library to get started.</p>
+                <p className="text-white/60 mb-6">You haven&apos;t enrolled in any courses. Browse our library to get started.</p>
                 <Link href="/courses" className="bg-cta text-primary font-bold px-6 py-3 rounded-xl inline-block hover:opacity-90">
                   Browse Courses
                 </Link>

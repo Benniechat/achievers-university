@@ -41,7 +41,7 @@ export async function updateCourse(id: string, data: any) {
 export async function createModule(courseId: string, title: string) {
   await requireAdmin();
   const count = await prisma.module.count({ where: { courseId } });
-  const module = await prisma.module.create({
+  const mod = await prisma.module.create({
     data: {
       courseId,
       title,
@@ -49,13 +49,13 @@ export async function createModule(courseId: string, title: string) {
     }
   });
   revalidatePath(`/dashboard/admin/courses/${courseId}`);
-  return module;
+  return mod;
 }
 
 export async function createLesson(moduleId: string, data: { title: string; videoUrl?: string; content?: string }) {
   await requireAdmin();
-  const module = await prisma.module.findUnique({ where: { id: moduleId }, select: { courseId: true } });
-  if (!module) throw new Error("Module not found");
+  const mod = await prisma.module.findUnique({ where: { id: moduleId }, select: { courseId: true } });
+  if (!mod) throw new Error("Module not found");
 
   const count = await prisma.lesson.count({ where: { moduleId } });
   const lesson = await prisma.lesson.create({

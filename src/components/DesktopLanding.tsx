@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { VideoPlayer } from "@/components/VideoPlayer";
 
 export function DesktopLanding() {
   return (
@@ -72,13 +73,10 @@ export function DesktopLanding() {
 
             <div className="relative z-10 lg:ml-8 mt-10 lg:mt-0">
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black aspect-video group">
-                {/* No absolute text overlay so video is clickable */}
-                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} className="w-full h-full" frameBorder="0" src="https://www.youtube.com/embed/kJBY0O9Nt_w?autoplay=0&amp;loop=1&amp;playlist=kJBY0O9Nt_w&amp;controls=1&amp;showinfo=0&amp;rel=0" title="Achievers University Training">
-                </iframe>
+                <VideoPlayer videoId="kJBY0O9Nt_w" />
               </div>
-              
-              {/* Trust Badge Floating */}
-              <div className="absolute -bottom-10 right-10 bg-[#020B1F]/90 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-2xl flex items-center gap-4">
+              {/* Trust Badge Floating (Now below video to avoid overlap on smaller screens) */}
+              <div className="mt-6 bg-[#020B1F]/90 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-2xl flex items-center gap-4">
                 <div className="flex -space-x-3">
                   <div className="w-10 h-10 rounded-full border-2 border-[#020B1F] bg-gray-300 overflow-hidden"><Image src="https://via.placeholder.com/40" alt="Student" width={40} height={40}/></div>
                   <div className="w-10 h-10 rounded-full border-2 border-[#020B1F] bg-gray-300 overflow-hidden"><Image src="https://via.placeholder.com/40" alt="Student" width={40} height={40}/></div>
